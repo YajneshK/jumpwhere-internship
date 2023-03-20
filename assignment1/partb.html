@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website </title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f5f5f5;
+  }
+  
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+   
+  header {
+    background-color: rgb(212, 245, 217);
+    color: rgb(78, 72, 72);
+    padding: 10px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav a {
+    color: rgb(61, 54, 54);
+    font-weight: bold;
+  }
+
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+
+  section ul{
+      list-style: inside;
+      margin-left: 1%;
+  }
+
+  section ol{
+    margin-left: 2%;
+  }
+
+  .container{
+    display: flex;
+    
+  }
+
+  .container > div {
+    background-color: #98a8df;
+    margin: 10px;
+    padding: 20px;
+    font-size: 10px;
+  }
+  
+
+  section p{
+    margin: 3%;
+  }
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+
+  img{
+      width: 100%;
+  }
+
+  
+  @media screen and (max-width: 768px) {
+    nav {
+      flex-direction: column;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  
+    nav li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    header {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="#">first web page</a>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">SignIn</a></li>
+          <li><a href="#">SignUp</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et felis
+          auctor, consequat velit ac, rutrum odio. Duis id sem ut arcu varius
+          laoreet. Aliquam erat volutpat. Integer elementum enim a libero
+          tristique euismod. Praesent eget diam ac orci ornare varius a vitae
+          velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et
+          felis auctor, consequat velit ac, rutrum odio. Duis id sem ut arcu
+          varius laoreet. Aliquam erat volutpat. Integer elementum enim a libero
+          tristique euismod. Praesent eget diam ac orci ornare varius a vitae
+          velit.
+        </p>
+      </section>
+      <div class="container">
+        <div class="box1">
+			<h2>Heading 1</h2>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+          exercitationem nostrum aliquid provident fugit nemo, tenetur, vero
+          numquam molestiae accusantium odit! Cum voluptates maiores nam cumque
+          fuga eum dolor modi.orem ipsum dolor sit amet, consectetur adipiscing elit.
+          felis auctor, consequat velit ac, rutrum odio. Duis id sem ut arcu
+          varius laoreet. Aliquam erat volutpat. Integer elementum enim a libero
+          tristique euismod. Praesent eget diam ac orci ornare varius a vitae
+          velit.
+        </div>
+
+        <div class="box2">
+			<h2>Heading 2</h2>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ad
+          dolorum dicta nesciunt ducimus omnis fuga perspiciatis ea, ratione
+          voluptate, provident magnam minima unde dignissimos velit molestias
+          natus? Esse, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et
+          felis auctor, consequat velit ac, rutrum odio. Duis id sem ut arcu
+          varius laoreet. Aliquam erat volutpat. Integer elementum enim a libero
+          tristique euismod. Praesent eget diam ac orci ornare varius a vitae
+          velit.
+        </div>
+
+        <div class="box3">
+			<h2>Heading 3</h2>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, cum
+          commodi tempore, nulla ea eum pariatur unde id sapiente ratione
+          debitis, orem ipsum dolor sit amet, consectetur adipiscing elit. Sed et
+          felis auctor, consequat velit ac, rutrum odio. Duis id sem ut arcu
+          varius laoreet. Aliquam erat volutpat. Integer elementum enim a libero
+          tristique euismod. Praesent eget diam ac orci ornare varius a vitae
+          velit.
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
