@@ -1,0 +1,6 @@
+user_input = input("Enter a comma-separated list of words: ")
+words_list = user_input.split(",")
+unique_words = list(set(words_list))
+sorted_words = sorted(unique_words)
+result = ", ".join(sorted_words)
+print(result)
