@@ -1,42 +1,36 @@
-import random
+#Create a program that will play the “cows and bulls” game with the user
+def initiation():
+    import random
+    
+    print('Welcome to the Cows and Bulls Game!')
+    guess_log = ['']
+    answer = random.randint(0,9999)
+    answer = '{0:04d}'.format(answer)
+    return guess_log, answer
 
-def generate_number():
-    """Generate a 4-digit number with no repeating digits."""
-    while True:
-        number = str(random.randint(1000, 9999))
-        if len(set(number)) == 4:
-            return number
+def get_guess(guess_log):
+    guess = input('Enter a number:')
+    guess_log.append(guess)
+    return guess_log
 
-def get_guess():
-    """Get a user's guess for a 4-digit number with no repeating digits."""
-    while True:
-        guess = input("Enter a 4-digit number with no repeating digits: ")
-        if len(guess) != 4 or not guess.isdigit() or len(set(guess)) < 4:
-            print("Invalid input. Please enter a 4-digit number with no repeating digits.")
-        else:
-            return guess
-
-def evaluate_guess(guess, target):
-    """Evaluate a guess and return the number of cows and bulls."""
-    cows = 0
-    bulls = 0
+def compare(guess, answer):
+    cow = 0
+    bull = 0
     for i in range(len(guess)):
-        if guess[i] == target[i]:
-            cows += 1
-        elif guess[i] in target:
-            bulls += 1
-    return cows, bulls
+        if guess[i] == answer[i]:
+            cow += 1
+        if guess[i] in answer:
+            bull += 1 
+    bull = bull - cow
+    return cow, bull
 
-# Main game loop
-if __name__ == '__main__':
-    print("Welcome to the Cows and Bulls Game!")
-    target = generate_number()
-    num_guesses = 0
-    while True:
-        guess = get_guess()
-        num_guesses += 1
-        cows, bulls = evaluate_guess(guess, target)
-        print(f"{cows} cows, {bulls} bulls")
-        if cows == 4:
-            print(f"Congratulations! You guessed the number in {num_guesses} tries.")
-            break
+def main():
+    guess_log, answer = initiation()
+    while guess_log[-1] != answer:
+        guess_log = get_guess(guess_log)
+        cow, bull = compare(guess_log[-1], answer)
+        print('{} cows, {} bulls'.format(cow, bull))
+    print('Your are right! After {} guess(es) you finally get it!\nYour logs:'.format(len(guess_log)-1), guess_log[1:])
+
+if __name__ == "__main__":
+    main()
