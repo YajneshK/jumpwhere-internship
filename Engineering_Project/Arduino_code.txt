@@ -1,0 +1,45 @@
+// Define analog input pin for pressure sensor
+const int pressurePin = A0;
+
+// Define output pin for compressor
+const int compressorPin = 13;
+
+// Define minimum and maximum pressure values (in PSI)
+const float minPressure = 28.0;
+const float maxPressure = 35.0;
+
+void setup() {
+  // Initialize serial communication
+  Serial.begin(9600);
+
+  // Set compressor pin as output
+  pinMode(compressorPin, OUTPUT);
+}
+
+void loop() {
+  // Read pressure sensor value
+  float pressure = analogRead(pressurePin);
+  
+  // Convert analog value to PSI
+  pressure = map(pressure, 0, 1023, 0, 100);
+  
+  // Display pressure on serial monitor
+  Serial.print(&quot;Pressure: &quot;);
+  Serial.print(pressure);
+  Serial.println(&quot; PSI&quot;);
+
+  // Check if pressure is below minimum value
+
+  if (pressure &lt; minPressure) {
+    // Turn on compressor
+    digitalWrite(compressorPin, HIGH);
+    Serial.println(&quot;Compressor ON&quot;);
+  } else if (pressure &gt; maxPressure) {
+    // Turn off compressor
+digitalWrite(compressorPin, LOW);
+    Serial.println(&quot;Compressor OFF&quot;);
+  }
+  
+  // Delay for stability
+  delay(1000);
+}
